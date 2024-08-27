@@ -10,16 +10,16 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="#前言
+<meta name="description" content="# 前言
 这是一个无聊的时候随手做的一个游戏工具而已，运用了Qt和SQL，实现简单的增改查
 
-#背景
+# 背景
 这就是江湖里有一个比武猜结果的游戏，里面有九种职业，随机两种职业进行前三回合的对决，通过观看这三回合对决猜出谁输谁赢，猜对了进行下一轮，猜错了止步，最多可以猜15轮，但是每三轮的强度是一致的，所以可以看做是五个阶段的猜侠。">
 <meta property="og:title" content="<Qt+SQL>这就是江湖猜侠工具">
-<meta property="og:description" content="#前言
+<meta property="og:description" content="# 前言
 这是一个无聊的时候随手做的一个游戏工具而已，运用了Qt和SQL，实现简单的增改查
 
-#背景
+# 背景
 这就是江湖里有一个比武猜结果的游戏，里面有九种职业，随机两种职业进行前三回合的对决，通过观看这三回合对决猜出谁输谁赢，猜对了进行下一轮，猜错了止步，最多可以猜15轮，但是每三轮的强度是一致的，所以可以看做是五个阶段的猜侠。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://2016317200404.github.io/post/-Qt%2BSQL--zhe-jiu-shi-jiang-hu-cai-xia-gong-ju.html">
@@ -81,18 +81,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>#前言<br>
-这是一个无聊的时候随手做的一个游戏工具而已，运用了Qt和SQL，实现简单的增改查</p>
-<p>#背景<br>
-这就是江湖里有一个比武猜结果的游戏，里面有九种职业，随机两种职业进行前三回合的对决，通过观看这三回合对决猜出谁输谁赢，猜对了进行下一轮，猜错了止步，最多可以猜15轮，但是每三轮的强度是一致的，所以可以看做是五个阶段的猜侠。</p>
-<p>#界面<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7a75db12-78da-4d93-b9c7-8ae7ede96c6c"><img src="https://github.com/user-attachments/assets/7a75db12-78da-4d93-b9c7-8ae7ede96c6c" alt="9e84795c-cef0-4769-a88a-cc3a1aad9e76" style="max-width: 100%;"></a></p>
-<p>#数据库表结构<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/25e65d11-922f-4468-8f63-66b742a617c5"><img src="https://github.com/user-attachments/assets/25e65d11-922f-4468-8f63-66b742a617c5" alt="c7bbed34-5b03-4ca1-8523-d96aa74d1ee0" style="max-width: 100%;"></a></p>
-<p>#功能<br>
-通过用户输入指定的场次，和两种职业及各自的三回合内出招进行检索，如果有记录则显示以前者职业为基础的胜率和记录次数，如果没有则提示没有检索到。招式这些如果在当前场次当前职业有过的话，可以通过下拉框选择，没有则通过新增招式进行添加即可。</p>
-<p>#代码地址<br>
-<a href="https://github.com/2016317200404/-">https://github.com/2016317200404/-</a></p></div>
+<div class="markdown-body" id="postBody"><h1>前言</h1>
+<p>这是一个无聊的时候随手做的一个游戏工具而已，运用了Qt和SQL，实现简单的增改查</p>
+<h1>背景</h1>
+<p>这就是江湖里有一个比武猜结果的游戏，里面有九种职业，随机两种职业进行前三回合的对决，通过观看这三回合对决猜出谁输谁赢，猜对了进行下一轮，猜错了止步，最多可以猜15轮，但是每三轮的强度是一致的，所以可以看做是五个阶段的猜侠。</p>
+<h1>界面</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7a75db12-78da-4d93-b9c7-8ae7ede96c6c"><img src="https://github.com/user-attachments/assets/7a75db12-78da-4d93-b9c7-8ae7ede96c6c" alt="9e84795c-cef0-4769-a88a-cc3a1aad9e76" style="max-width: 100%;"></a></p>
+<h1>数据库表结构</h1>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/25e65d11-922f-4468-8f63-66b742a617c5"><img src="https://github.com/user-attachments/assets/25e65d11-922f-4468-8f63-66b742a617c5" alt="c7bbed34-5b03-4ca1-8523-d96aa74d1ee0" style="max-width: 100%;"></a></p>
+<h1>功能</h1>
+<p>通过用户输入指定的场次，和两种职业及各自的三回合内出招进行检索，如果有记录则显示以前者职业为基础的胜率和记录次数，如果没有则提示没有检索到。招式这些如果在当前场次当前职业有过的话，可以通过下拉框选择，没有则通过新增招式进行添加即可。</p>
+<h1>代码地址</h1>
+<p><a href="https://github.com/2016317200404/-">https://github.com/2016317200404/-</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
