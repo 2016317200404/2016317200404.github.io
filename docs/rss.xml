@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>清河的博客</title><link>https://2016317200404.github.io</link><description>分享一些技术心得</description><copyright>清河的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/31763231?v=4&amp;size=64</url><title>avatar</title><link>https://2016317200404.github.io</link></image><lastBuildDate>Tue, 27 Aug 2024 14:10:12 +0000</lastBuildDate><managingEditor>清河的博客</managingEditor><ttl>60</ttl><webMaster>清河的博客</webMaster><item><title>&lt;Qt+SQL&gt;这就是江湖猜侠工具</title><link>https://2016317200404.github.io/post/-Qt%2BSQL--zhe-jiu-shi-jiang-hu-cai-xia-gong-ju.html</link><description># 前言&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>清河的博客</title><link>https://2016317200404.github.io</link><description>分享一些技术心得</description><copyright>清河的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/31763231?v=4&amp;size=64</url><title>avatar</title><link>https://2016317200404.github.io</link></image><lastBuildDate>Wed, 28 Aug 2024 09:01:00 +0000</lastBuildDate><managingEditor>清河的博客</managingEditor><ttl>60</ttl><webMaster>清河的博客</webMaster><item><title>&lt;Qt+多线程&gt;QFileSystemModel + QListView制作的文件浏览器</title><link>https://2016317200404.github.io/post/-Qt%2B-duo-xian-cheng--QFileSystemModel%20%2B%20QListView-zhi-zuo-de-wen-jian-liu-lan-qi.html</link><description># 前言&#13;
+之前遇见一个文件浏览器，按页显示，缩略图又只有一个线程在加载，自然导致当文件足够多的时候一个个翻页麻烦，而且缩略图加载缓慢，而且样式也不美观，所以利用Qt自制了一款和电脑端的文件浏览器差不多的文件浏览器，即上下滑动，缩略图使用多线程进行加载&#13;
+&#13;
+# 要点&#13;
+1. Qt的控件虽然也有自带缩略图功能，但是不是我想要的，所以通过继承QFileIconProvider重写icon函数实现自定义的缩略图显示&#13;
+2. 需要加载缩略图的文件有可能很多，运用QChache容器可以使大部分情况不用再重复加载，QChache还能使当容器满的时候再添加会自动把最前添加的文件释放掉，自动管理，很方便&#13;
+3. 既然是多线程，就要考虑线程同步问题，这边我使用了线程锁QMutex&#13;
+4. 不同的图片、视频的分辨率都有可能不一致，而且只需要缩略图，所以可以统一大小，例如128x128或者其他&#13;
+5. 对于视频文件的缩略图使用了二层缓存策略，即不仅在代码里使用QChache，还在文件的当前路径生成一个隐藏的文件夹，存放视频文件的缩略图图片，因为使用ffmpeg生成图片是很消耗时间和性能的&#13;
+6. 原先的QListView默认是不支持手势的，需要在代码里捕捉手势动作，再在手势处理函数里处理才行&#13;
+7. ‎IconViewDelegate是一个Icon样式的代理，可以在此自定义Icon的样式&#13;
+8. 运用到了QThreadPool，即由Qt自身的线程池进行管理，设置了QThread::idealThreadCount() / 2 + 1大小，即当前CPU核数一半+1&#13;
+&#13;
+# 代码地址&#13;
+https://github.com/2016317200404/work-essay/tree/main/MyFileManager。</description><guid isPermaLink="true">https://2016317200404.github.io/post/-Qt%2B-duo-xian-cheng--QFileSystemModel%20%2B%20QListView-zhi-zuo-de-wen-jian-liu-lan-qi.html</guid><pubDate>Wed, 28 Aug 2024 09:00:30 +0000</pubDate></item><item><title>&lt;Qt+SQL&gt;这就是江湖猜侠工具</title><link>https://2016317200404.github.io/post/-Qt%2BSQL--zhe-jiu-shi-jiang-hu-cai-xia-gong-ju.html</link><description># 前言&#13;
 这是一个无聊的时候随手做的一个游戏工具而已，运用了Qt和SQL，实现简单的增改查&#13;
 &#13;
 # 背景&#13;
